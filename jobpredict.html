@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>将来の職業</title>
+    <style>
+        body {text-align: center;}
+        </style>
+
+</head>
+<body>
+<h1>将来の職業チェック</h1>
+    <p><input type="text" id="name" value=""></p>
+    <p><input type="button" id="getResult" value="チェック"></p>
+    <h2>チェック結果</h2>
+    <p id="result"></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+     $(function(){
+       $("#getResult").click(function(){
+         var name  = $("#name").val();
+         var types = ["ニート","自宅警備員","にぃと","無職","生活保護受給者"];
+         var type  = types[Math.floor(Math.random() * types.length)];
+         var result= name +"は"+ type + "です";
+         $("#result").text(result);
+       });
+     });
+    </script>
+ </body>
+ </html>
